@@ -1,13 +1,13 @@
 
 // Fill in <main> with divs
-for(var a = 0; a < 5200; a++) {
+for(var counter = 0; counter < 5200; counter++) {
     $("main").append("<div></div>");
 }
 
 
 // Prevent default div drag
-$("div").ondragstart = function () { return false; };
 $("main").ondragstart = function () { return false; };
+$("div").ondragstart = function () { return false; };
 
 
 // Clear board funtionality
@@ -40,8 +40,6 @@ $("#change-btn").click( function() {
         imgIndex = 0;
     }
 
-    console.log("img index:" + imgIndex + "///" + "url('img/" + images[imgIndex] + "')")
-
-    //Implement selected images to body's background
+    //Apply selected images to body's background
     $("body").css({ "background-image":"url(img/" + images[imgIndex] + ")" });
 });
