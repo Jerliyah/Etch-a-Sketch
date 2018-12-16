@@ -1,29 +1,29 @@
 
-// Fill in <main> with divs
+// Fill in <main> with .pixels
 for(var counter = 0; counter < 5200; counter++) {
-    $("main").append("<div></div>");
+    $("main").append("<div class='pixel'></.pixel>");
 }
 
 
-// Prevent default div drag
+// Prevent default .pixel drag
 $("main").ondragstart = function () { return false; };
-$("div").ondragstart = function () { return false; };
+$(".pixel").ondragstart = function () { return false; };
 
 
 // Clear board funtionality
 $("#clear-btn").click(function() {
-    $("div").css({ "background":"transparent"});
+    $(".pixel").css({ "background":"transparent"});
 });
 
 
 // Mouse press and drag to draw
 $(window).mousedown( function() {
-    $("div").on("mouseenter", function() {
+    $(".pixel").on("mouseenter", function() {
         $(this).css({ "background":"black"});
     });
 });
 $(window).mouseup( function() {
-    $("div").off();
+    $(".pixel").off();
 });
 
 
